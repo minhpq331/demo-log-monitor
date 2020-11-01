@@ -58,4 +58,15 @@ logstash_prefix: k8s_log
 
 - Mở menu `Discovery` và bắt đầu search log
 
+## Thực hành 2: Deploy prometheus-operator
 
+- Cài đặt prometheus-operator:
+
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+helm upgrade --install -n <ns> prom-operator prometheus-community/kube-prometheus-stack
+```
+
+- Verify
