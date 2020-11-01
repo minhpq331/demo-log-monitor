@@ -1,0 +1,10 @@
+---
+elasticsearchHosts: "http://<ip>:9200"
+
+replicas: 1
+
+service:
+  type: NodePort
+  port: 5601
+  nodePort: 30012
+  annotations: {}
