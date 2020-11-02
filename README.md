@@ -69,4 +69,17 @@ helm repo update
 helm upgrade --install -n <ns> prom-operator prometheus-community/kube-prometheus-stack
 ```
 
-- Verify
+- Verify bằng cách get pod đang chạy và service prometheus, grafana 
+- Debug prometheus:
+
+```bash
+kubectl -n <ns> port-forward svc/prom-operator-kube-prometh-prometheus 9090:9090
+```
+
+- Forward grafana để test nhanh:
+
+```bash
+kubectl -n <ns> port-forward svc/prom-operator-grafana 8080:80
+```
+
+- Đăng nhập grafana: `admin/prop-operator`
